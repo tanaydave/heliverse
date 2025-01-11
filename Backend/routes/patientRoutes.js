@@ -7,7 +7,7 @@ const {
   getPatientById,
   updatePatient,
   deletePatient,
-} = require('../Controllers/patientController');
+} = require('../controllers/patientController');
 
 // Routes
 router.post('/', verifyToken, verifyRole(['admin']), createPatient);
