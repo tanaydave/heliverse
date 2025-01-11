@@ -1,5 +1,5 @@
 const DietChart = require('../models/DietChart');
-const Patient = require('../Models/Patient');
+const Patient = require('../models/Patient');
 
 // Create a new diet chart
 const createDietChart = async (req, res) => {
