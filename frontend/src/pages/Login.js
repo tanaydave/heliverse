@@ -13,6 +13,8 @@ const Login = () => {
     try {
       const response = await axios.post("http://localhost:8000/api/auth/login", { email, password });
       localStorage.setItem("token", response.data.token);
+      console.log(response.data.role)
+      localStorage.setItem("role", response.data.role);
       navigate("/dashboard");
     } catch (error) {
       alert("Login failed. Please check your credentials.");

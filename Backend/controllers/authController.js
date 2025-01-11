@@ -15,7 +15,7 @@ const register = async (req, res) => {
     const newUser = new User({ name, email, password, role });
     await newUser.save();
 
-    res.status(201).json({ message: 'User registered successfully' });
+    res.status(201).json({ message: 'User registered successfully', role:newUser.role });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error });
   }
@@ -37,7 +37,7 @@ const login = async (req, res) => {
     // Generate JWT
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-    res.status(200).json({ message: 'Login successful', token });
+    res.status(200).json({ message: 'Login successful', token,role: user.role });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error });
   }
