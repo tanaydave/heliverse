@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/auth/register", { name, email, password, role });
+      await axios.post("https://heliverse-3i2e.onrender.com/api/auth/register", { name, email, password, role });
       navigate("/login");
     } catch (error) {
       alert("Registration failed. Please check your details and try again.");

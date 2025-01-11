@@ -9,7 +9,7 @@ const DeliveryPersonnel = () => {
     const fetchTasks = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/deliveryTasks", {
+        const response = await axios.get("https://heliverse-3i2e.onrender.com/api/deliveryTasks", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTasks(response.data);

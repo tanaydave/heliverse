@@ -9,7 +9,7 @@ const HospitalManager = () => {
     const fetchPatients = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/patients", {
+        const response = await axios.get("https://heliverse-3i2e.onrender.com/api/patients", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setPatients(response.data);

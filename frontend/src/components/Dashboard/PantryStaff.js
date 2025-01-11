@@ -9,7 +9,7 @@ const PantryStaff = () => {
     const fetchDietCharts = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:8000/api/dietCharts", {
+        const response = await axios.get("https://heliverse-3i2e.onrender.com/api/dietCharts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setDietCharts(response.data);
