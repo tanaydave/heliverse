@@ -13,11 +13,12 @@ app.use(express.json());
 app.use(cors());
 
 // Import Routes
-const authRoutes = require('./Routes/authRoutes');
+const authRoutes = require('./routes/authRoutes');
 const patientRoutes = require('./routes/patientRoutes');
-const dietChartRoutes = require('./Routes/dietChartRoutes');
-const pantryStaffRoutes = require('./Routes/pantryStaffRoutes');
-const deliveryPersonnelRoutes = require('./Routes/deliveryPersonnelRoutes');
+const dietChartRoutes = require('./routes/dietChartRoutes');
+const pantryStaffRoutes = require('./routes/pantryStaffRoutes');
+const deliveryPersonnelRoutes = require('./routes/deliveryPersonnelRoutes');
+const deliveryTaskRoutes = require("./routes/deliveryTaskRoutes")
 
 // Routes Middleware
 
@@ -26,7 +27,7 @@ app.use('/api/patients', patientRoutes);
 app.use('/api/diet-charts', dietChartRoutes);
 app.use('/api/pantry-staff', pantryStaffRoutes);
 app.use('/api/delivery-personnel', deliveryPersonnelRoutes);
-
+app.use("/api/deliveryTasks", deliveryTaskRoutes);
 
 
 main().catch(err => console.log(err));
